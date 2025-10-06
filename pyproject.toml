@@ -1,0 +1,30 @@
+[project]
+name = "xsia-docling"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Benny L.E.P", email = "bendo01@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "docling>=2.55.1",
+    "torch>=2.8.0",
+    "torchvision>=0.23.0",
+]
+
+[project.scripts]
+xsia-docling = "xsia_docling:main"
+
+[build-system]
+requires = ["uv_build>=0.8.22,<0.9.0"]
+build-backend = "uv_build"
+
+[[tool.uv.index]]
+name = "torch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "torch-cpu" }
+torchvision = { index = "torch-cpu" }
